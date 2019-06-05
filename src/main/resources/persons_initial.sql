@@ -1,0 +1,10 @@
+insert into persons(FIRST_NAME, LAST_NAME) values('Mark', 'Hamill');
+insert into persons(FIRST_NAME, LAST_NAME) values('Harrison', 'Ford');
+insert into persons(FIRST_NAME, LAST_NAME) values('Carrie', 'Fisher');
+insert into persons(FIRST_NAME, LAST_NAME) values('Billy', 'Williams');
+insert into persons(FIRST_NAME, LAST_NAME) values('Anthony', 'Daniels');
+insert into persons(FIRST_NAME, LAST_NAME) values('David', 'Prowse');
+insert into persons(FIRST_NAME, LAST_NAME) values('Peter', 'Mayhew');
+insert into persons(FIRST_NAME, LAST_NAME) values('Kenny', 'Baker');
+insert into persons(FIRST_NAME, LAST_NAME) values('Frank', 'Oz');
+insert into persons(FIRST_NAME, LAST_NAME) values('Alec', 'Guinness');

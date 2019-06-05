@@ -1,0 +1,74 @@
+<div class="card my-5">
+	<div class="card-body">
+
+		<div>
+			There are a couple of users already loaded in the database.
+			<br/><br/>
+			<div style="color:blue;"> 
+				You should search only by one field at time (bug :) ). 
+			</div>
+			<br/>
+			<ol>
+				<li><b>First Name:</b> John, <b>First Name:</b> Doe</li>
+				<li><b>First Name:</b> Jane, <b>First Name:</b> Doe</li>
+				<li><b>First Name:</b> Jebediah, <b>First Name:</b> Freebit</li>
+			</ol>
+			<div>
+
+				<form (ngSubmit)="onSearch()" #personForm="ngForm">
+
+					<div class="form-group">
+						<label for="firstName">First Name</label> 
+						
+						<input type="text" [required]="false"
+							[(ngModel)]="person.firstName" (keyup)="clear($event)"
+							class="form-control" id="firstName" name="firstName"
+							placeholder="Enter first name" required #name="ngModel">
+					</div>
+				
+					<div class="form-group">
+						<label for="lastName">Last Name</label> 
+						
+						<input type="text" [required]="false"
+							[(ngModel)]="person.lastName" (keyup)="clear($event)"
+							class="form-control" id="lastName" name="lastName"
+							placeholder="Enter last name" required #name="ngModel">
+					</div>
+					
+					
+					<div class="form-group">
+						<label for="name">Name</label> 
+						
+						<input type="text" [required]="false"
+							[(ngModel)]="person.name" (keyup)="clear($event)"
+							class="form-control" id="name" name="name"
+							placeholder="Enter name (first or last)" required #name="ngModel">
+					</div>
+ 
+					<button type="submit" [disabled]="!personForm.form.valid"
+						class="btn btn-info">Search</button>
+				</form>
+
+				<br />
+
+				<div [hidden]="!personsFound">
+					<table class="table table-bordered table-striped">
+						<thead class="thead-dark">
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">First Name</th>
+								<th scope="col">Last Name</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let person of personsFound">
+								<td>{{ person.id }}</td>
+								<td>{{ person.firstName }}</td>
+								<td>{{ person.lastName }}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+		</div>
